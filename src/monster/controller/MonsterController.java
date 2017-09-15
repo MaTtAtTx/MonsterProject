@@ -1,23 +1,16 @@
 package monster.controller;
 
-import java.util.Scanner;
+import monster.model.MarshmallowMonster;
 
 public class MonsterController
 {
 	public void start()
 	{
-		funScanner();
+		MarshmallowMonster sample = new MarshmallowMonster();
+		System.out.println(sample);
+		MarshmallowMonster realMonster = new MarshmallowMonster("Tom", 3, 4, 3.0, false);
+		System.out.println(realMonster);
+		
 	}
 
-	private void funScanner()
-	{
-		Scanner firstScanner;
-		firstScanner = new Scanner(System.in);
-		int testAnswer = firstScanner.nextInt();
-		System.out.println("Why did you type " + testAnswer + "?");
-		System.out.println("Who are you?");
-		String test2Answer = firstScanner.nextLine();
-		System.out.println("Your name is " + test2Answer + "? That's weird. :)");
-
-	}
-}
+}	
