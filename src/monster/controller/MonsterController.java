@@ -4,7 +4,7 @@ public class MonsterController
 {
 	public void start()
 	{
-		
-	}
 	
+	}
+
 }

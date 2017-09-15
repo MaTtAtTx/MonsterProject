@@ -4,7 +4,7 @@ public class MonsterRunner
 {
 	public static void main(String [] args)
 	{
-		MonsterController myApp = new MonsterController();
-		myApp.start();
+		MonsterController app = new MonsterController();
+		app.start();
 	}
 }
