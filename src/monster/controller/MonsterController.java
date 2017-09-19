@@ -14,7 +14,7 @@ public class MonsterController
 		System.out.println("Matthew is hungry, so he is going to eat an eye.");
 		realMonster.setEyeCount(1);
 		System.out.println(realMonster);
-		
+
 		interactWithTheMonster(realMonster);
 	}
 
@@ -25,14 +25,21 @@ public class MonsterController
 		System.out.println("How many do you want to eat?");
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
-		if (consumed > currentMonster.getArmCount())
+		if (consumed <= currentMonster.getArmCount() && consumed >= 0)
 		{
-		System.out.println(currentMonster.getName() + " says they don't have that many arms.");
+			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
+			System.out.println("Ok, now " + currentMonster.getName() + " has " + currentMonster.getArmCount() + " arms left.");
 		}
 		else
 		{
-		currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-		System.out.println("Ok, now " + currentMonster.getName() + " has " + currentMonster.getArmCount() + " arms left.");
+			if (consumed > -1)
+			{	
+				System.out.println(currentMonster.getName() + " says they don't have that many arms.");
+			}
+			else
+			{	
+				System.out.println(currentMonster.getName() + " says that is an invalid amount.");
+			}
 		}
 	}
-}	
+}
