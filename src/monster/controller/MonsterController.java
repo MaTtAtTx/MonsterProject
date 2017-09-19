@@ -72,5 +72,10 @@ public class MonsterController
 			currentMonster.setTentacleAmount(currentMonster.getTentacleAmount() - consumedTentacles);
 			System.out.println("Ok, now " + currentMonster.getName() + " has " + currentMonster.getTentacleAmount() + " arms left.");
 		}
+		
+		popup.displayText("Hey look at me! :)");
+		String answer = popup.getResponse("How many meals are you eating today?");
+		System.out.println(answer);
+		popup.displayText(answer);
 	}
 }
