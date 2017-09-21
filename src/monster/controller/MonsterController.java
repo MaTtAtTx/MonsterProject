@@ -37,10 +37,13 @@ public class MonsterController
 //		System.out.println(currentMonster.getName() + " suggests you eat arms. They have " + currentMonster.getArmCount() + " arms.");
 		popup.displayText(currentMonster.getName() + " suggests you eat arms. They have " + currentMonster.getArmCount() + " arms.");
 //		System.out.println("How many do you want to eat?");
-		int specialAnswer;
+		int specialConsumed;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
-		specialAnswer = Integer.parseInt(unconverted);
+		if(isValidInteger(unconverted))
+		{
+			specialConsumed = Integer.parseInt(unconverted);
+		}
 		
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
@@ -100,18 +103,52 @@ public class MonsterController
 	}
 
 	//Helper methods
-	private boolean isValidInteger(String sample)
+	private boolean isValidInteger(String sampleInt)
 	{
 		boolean valid = false;
 				
 		try
 		{
-			Integer.parseInt(sample);
+			Integer.parseInt(sampleInt);
 			valid = true;
 		}
 		catch(NumberFormatException error)
 		{
-			popup.displayText("Only integer values are valid: " + sample + " is not.");
+			popup.displayText("Only integer values are valid: " + sampleInt + " is not.");
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			popup.displayText("Only double values are valid: " + sampleDouble + "is not.");
+		}
+		
+		return valid;
+	}
+	
+	private boolean isValidBoolean(String sampleBoolean)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Only boolean values are valid: " + sampleBoolean + "is not.");
 		}
 		
 		return valid;
