@@ -127,6 +127,7 @@ public class MonsterController
 	{
 		boolean valid = false;
 		
+		//Try and catch test a primitive (this one double) is actually a double and if it's not it catches it instead of crashing your program
 		try
 		{
 			Double.parseDouble(sampleDouble);
