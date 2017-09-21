@@ -6,6 +6,7 @@ import monster.view.MonsterDisplay;
 
 public class MonsterController
 {
+	//Includes popups from MonsterDisplay in the code
 	private MonsterDisplay popup;
 	
 	public MonsterController()
@@ -37,17 +38,19 @@ public class MonsterController
 //		System.out.println(currentMonster.getName() + " suggests you eat arms. They have " + currentMonster.getArmCount() + " arms.");
 		popup.displayText(currentMonster.getName() + " suggests you eat arms. They have " + currentMonster.getArmCount() + " arms.");
 //		System.out.println("How many do you want to eat?");
-		int specialConsumed;
+		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
+		//Uses the isValidInteger helper method to help this popup know if the response it is getting is actually an integer
 		if(isValidInteger(unconverted))
 		{
-			specialConsumed = Integer.parseInt(unconverted);
+			specialAnswer = Integer.parseInt(unconverted);
 		}
 		
 		Scanner myScanner = new Scanner(System.in);
-		int consumed = myScanner.nextInt();
-
+		int consumed = 0;
+		consumed = specialAnswer;
+		
 		if (consumed <= currentMonster.getArmCount() && consumed >= 0)
 		{
 			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
