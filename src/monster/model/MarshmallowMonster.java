@@ -14,7 +14,8 @@ public class MarshmallowMonster
 		// Unless we specify values, all data members
 		// are a zero, false, or null
 	}
-
+	
+	//Set the initial parameters for a marshmallow monster
 	public MarshmallowMonster(String name, int eyeCount, int armCount, double tentacleAmount, boolean hasBloop)
 	{
 		this.name = name;
@@ -76,6 +77,7 @@ public class MarshmallowMonster
 		this.hasBloop = hasBloop;
 	}
 
+	//Every time marshmallow monster is called in the controller it displays this statement
 	public String toString()
 	{
 		String description = "Hi, I am a scary monster! Ny name is " + name + ", and I have " + eyeCount;
