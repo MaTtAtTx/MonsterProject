@@ -65,7 +65,8 @@ public class MonsterController
 			popup.displayText(current.getName());
 			String newName = popup.getResponse("What should my new new name be?");
 			current.setName(newName);
-			popup.displayText(current.getName());		}
+			popup.displayText(current.getName());		
+		}
 	}
 
 	
